@@ -3,14 +3,14 @@
 int size = 10;
 int[] array = new int[size];
 
-int numberOfSearch = 0;
+int countOfSearch = 0;
 for (int i = 0; i < array.Length; i++)
 {
-    array[i] = new Random().Next(1, 101);
+    array[i] = new Random().Next();
     if (array[i] % 2 == 0)
     {
-        numberOfSearch++;
+        countOfSearch++;
     }
 }
 Console.WriteLine($"Массив: [{string.Join(", ", array)}]");
-Console.WriteLine($"Количество четных элементов массива: {numberOfSearch}");
+Console.WriteLine($"Количество четных элементов массива: {countOfSearch}");

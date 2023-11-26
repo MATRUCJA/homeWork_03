@@ -2,10 +2,18 @@
 
 int size = 10;
 double[] array = new double[size];
-double maxArray = array[0], minArray = array[0], diff;
+
+double diff;
+
 for (int i = 0; i < array.Length; i++)
 {
-    array[i] = Math.Round((new Random().NextDouble() * new Random().Next(1001)), 2);
+    array[i] = Math.Round((new Random().NextDouble() * new Random().Next(1001)), 2);  
+}
+double maxArray = array[0]; 
+double minArray = array[0]; 
+
+for (int i = 0; i < array.Length; i++)
+{
     if (array[i] > maxArray)
     {
         maxArray = array[i];
@@ -15,7 +23,8 @@ for (int i = 0; i < array.Length; i++)
         minArray = array[i];
     }
 }
-diff = maxArray - minArray;
+diff = Math.Round((maxArray - minArray),2);
+
 Console.WriteLine($"Массив: [{string.Join("; ", array)}]");
-Console.WriteLine($"разница между {maxArray} и {minArray}:  {diff}");
+Console.WriteLine($"\nразница между максимальным {maxArray} и минимальным {minArray} элементами массива:  {diff}");
 

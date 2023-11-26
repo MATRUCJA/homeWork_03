@@ -4,14 +4,14 @@
 int size = 10;
 int[] array = new int[size];
 
-int numberOfSearch = 0;
+int countOfSearch = 0;
 for (int i = 0; i < array.Length; i++)
 {
     array[i] = new Random().Next(1, 101);
     if (array[i] >= 20 && array[i] <= 90)
     {
-        numberOfSearch++;
+        countOfSearch++;
     }
 }
 Console.WriteLine($"Массив: [{string.Join(", ", array)}]");
-Console.WriteLine($"количество элементов из заданного отрезка: {numberOfSearch}");
+Console.WriteLine($"количество элементов из заданного отрезка: {countOfSearch}");
