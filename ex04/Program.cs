@@ -3,29 +3,26 @@
 массива должен быть равен количеству цифр.*/
 
 
-int number=new Random().Next(1,1000001);
- int inputNumber=number;
-int size;
-int[] array = new int[size];
+using System.ComponentModel;
 
-for (int i=0; i<array.Length; i++)
+int number=new Random().Next(1,100001);
+int inputNumber=number;
+int size=0;
+
+
+while (number>0)
 {
-    
-} 
-
-
-
-int size = 10;
-int[] array = new int[size];
-
-int numberOfSearch = 0;
-for (int i = 0; i < array.Length; i++)
-{
-    array[i] = new Random().Next(1, 101);
-    if (array[i] >= 20 && array[i] <= 90)
-    {
-        numberOfSearch++;
-    }
+    number/=10;
+    size++;
 }
+
+int[] array = new int[size];
+Console.WriteLine($"Размер массива: {size}");
+Console.WriteLine($"Исходное число: {inputNumber}");
+for (int i=array.Length-1; i>=0; i--)
+{
+    array[i]=inputNumber%10;
+    inputNumber/=10;
+}
+
 Console.WriteLine($"Массив: [{string.Join(", ", array)}]");
-Console.WriteLine($"количество элементов из заданного отрезка: {numberOfSearch}");
